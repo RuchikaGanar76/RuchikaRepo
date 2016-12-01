@@ -1,0 +1,33 @@
+apply plugin : 'java'
+
+apply plugin : 'application'
+
+apply plugin : 'sonar-runner'
+
+//apply plugin : 'sonar'
+
+mainClassName = 'com.cg.bank.test.AccountTest'
+
+
+repositories{
+	jcenter()
+}
+
+
+dependencies {
+  testCompile "org.mokito:mockito-core:1.+"
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+sonarRunner{
+
+sonarProperties{
+
+property "sonar.projectName", "bankapp"
+property "sonar.projectKey",  "org.sonarqube:java-gradle-simple"
+
+}
+}
